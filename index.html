@@ -429,7 +429,26 @@
             overflow: hidden;
         }
 
+        .about-image-placeholder::after {
+            content: "";
+            position: absolute;
+            inset: -6%;
+            border: 1.5px solid rgba(255,255,255,0.25);
 
+            border-radius: 48% 52% 55% 45% / 52% 48% 46% 54%;
+            transform: rotate(-3deg);
+
+            pointer-events: none;
+        }
+
+        .about-photo {
+            width: 72%;
+            height: 72%;
+            object-fit: cover;
+            object-position: center 20%;
+            border-radius: 50%;
+            display: block;
+        }
 
         /* Sketch frame */
         .about-image-placeholder::before {
