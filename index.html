@@ -412,17 +412,23 @@
         .about-image-wrapper {
             position: relative;
         }
-
+        
         .about-image-placeholder {
-            width: 100%;
-            aspect-ratio: 3/4;
+            width: 360px;
+            aspect-ratio: 1 / 1;
+            margin: 0 auto;
+
             background: linear-gradient(135deg, var(--earth-deep) 0%, var(--earth-brown) 100%);
+            border-radius: 50%;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             position: relative;
             overflow: hidden;
         }
+
 
         /* Sketch frame */
         .about-image-placeholder::before {
