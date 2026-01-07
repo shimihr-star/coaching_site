@@ -1114,7 +1114,10 @@
                     <label for="message" class="visually-hidden">הודעה</label>
                     <textarea id="message" name="message" placeholder="ספרו לי קצת על עצמכם..."></textarea>
                 </div>
-                <button type="submit" class="cta-button submit-button">שלח</button>
+                <button type="button" class="cta-button submit-button" onclick="sendWhatsApp()">
+    שלח ב־WhatsApp
+</button>
+
             </form>
         </div>
     </section>
@@ -1173,11 +1176,33 @@
             });
         });
 
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('תודה על פנייתך! אחזור אליך בהקדם.');
-        });
+
+
+        function sendWhatsApp() {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (!name || !phone) {
+            alert('אנא מלא שם וטלפון');
+            return;
+        }
+
+        const text =
+            `שלום שמעון,%0A` +
+            `יש פנייה חדשה מהאתר:%0A%0A` +
+            `שם: ${name}%0A` +
+            `טלפון: ${phone}%0A` +
+            `אימייל: ${email}%0A` +
+            `הודעה: ${message}`;
+
+        const whatsappNumber = '972504656566';
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+
+        window.open(url, '_blank');
+        }
     </script>
 </body>
 </html>
