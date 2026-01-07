@@ -1097,7 +1097,9 @@
                 </a>
             </div>
             
-            <form class="contact-form" aria-label="טופס יצירת קשר">
+            <form class="contact-form"
+                aria-label="טופס יצירת קשר"
+                onsubmit="sendWhatsApp(); return false;">
                 <div class="form-field">
                     <label for="name" class="visually-hidden">שם מלא</label>
                     <input type="text" id="name" name="name" placeholder="שם מלא" required autocomplete="name">
