@@ -1179,10 +1179,10 @@
 
 
         function sendWhatsApp() {
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
         if (!name || !phone) {
             alert('אנא מלא שם וטלפון');
@@ -1190,16 +1190,15 @@
         }
 
         const text =
-            `שלום שמעון,%0A` +
-            `יש פנייה חדשה מהאתר:%0A%0A` +
-            `שם: ${name}%0A` +
-            `טלפון: ${phone}%0A` +
-            `אימייל: ${email}%0A` +
+            `שלום שמעון,\n` +
+            `יש פנייה חדשה מהאתר:\n\n` +
+            `שם: ${name}\n` +
+            `טלפון: ${phone}\n` +
+            `אימייל: ${email}\n` +
             `הודעה: ${message}`;
 
         const whatsappNumber = '972504656566';
         const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-
 
         window.open(url, '_blank');
         }
